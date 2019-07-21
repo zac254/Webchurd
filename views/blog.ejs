@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Webchurd</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		
+		<link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/blogstyle.css">
+    </head>
+  <body>
+<div class="container">
+	
+
+<nav class="navbar sticky-top slide-down navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+	<img src="../images/logo.png">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="container">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link spec" href="#">Website <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link spec" href="#">Popular</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link spec dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Learning
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">JavaScript</a>
+          <a class="dropdown-item" href="#">CSS</a>
+          <a class="dropdown-item" href="#">JQuery</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">video tuts</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link spec" href="#">Recent</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+   </div>
+  </div>
+</nav>
+
+<div class="row">	
+					<!-- post -->
+					<% for( let x = 0; x < post.length && x < 2; x++ ) { %>
+					<div class="col-md-6">
+						<div class="post post-thumb">
+							<a class="post-img" href="/blog/<%=post._id%>"><img src="<%= post[x].image %>" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-2" href="/blog/<%= post._id %>"><%= post[x].tag%></a>
+									<span class="post-date"><%= post[x].date.toDateString()%></span>
+								</div>
+								<h3 class="post-title"><a href="/blog/<%= post[x]._id %>"> <%= post[x].title%></a></h3>
+							</div>
+						</div>
+					</div>
+					<% } %> 
+					<!-- /post -->
+</div>
+
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title">
+							<h2>Recent Posts</h2>
+						</div>
+					</div>
+
+					<!-- post -->
+					<% for( let x = 0; x < post.length && x < 6;  x++ ) { %>
+					<div class="col-md-4">
+						<div class="post">
+							<a class="post-img" href="/blog/<%=post[x]._id%>"><img src="<%= post[x].image %>" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-1" href="/blog/<%=post[x]._id%>"><%=post[x].tag%></a>
+									<span class="post-date"><%=post[x].date.toDateString()%></span>
+								</div>
+								<h3 class="post-title"><a href="/blog/<%=post[x]._id%>"><%= post[x].title %></a></h3>
+							</div>
+						</div>
+					</div>
+					<% } %>
+					<!-- /post -->
+
+				</div>
+				<!-- /row -->
+
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<!-- post -->
+							<% for( let x = 6; x < post.length && x < 7; x++ ) { %>
+							
+							
+							<div class="col-md-12">
+								<div class="post post-thumb">
+									<a class="post-img" href="blog-post.html"><img src="<%= post[x].image %>" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-3" href="/blog/<%=post[x]._id%>l"><%= post[x].tag %> </a>
+											<span class="post-date"><%= post[x].date.toDateString() %> </span>
+										</div>
+										<h3 class="post-title"><a href="/blog/<%=post[x]._id%>"><%= post[x].title %> </a></h3>
+									</div>
+								</div>
+							</div>
+							<% } %>
+							<!-- /post -->
+
+							<!-- post -->
+							<% for( let x = 4; x < post.length && x < 10; x++ ) { %>
+							<div class="col-md-6">
+								<div class="post">
+									<a class="post-img" href="/blog/<%=post[x]._id%>"><img src="../images/post-1.jpg" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-4" href="/blog/<%=post[x]._id%>"><%= post[x].tag %> </a>
+											<span class="post-date"><%= post[x].date.toDateString() %> </span>
+										</div>
+										<h3 class="post-title"><a href="/blog/<%=post[x]._id%>"><%= post[x].title %> </a></h3>
+									</div>
+								</div>
+							</div>
+							<% } %>
+							<!-- /post -->
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<!-- post widget -->
+						<div class="aside-widget">
+							<div class="section-title">
+								<h2>Most Read</h2>
+							</div>
+							<% for( let x = 6; x < post.length && x < 9; x++ ) { %>
+							<div class="post post-widget">
+								<a class="post-img" href="/blog/<%= post[x]._id %>"><img src="../images/widget-1.jpg" alt=""></a>
+								<div class="post-body">
+									<h3 class="post-title"><a href="/blog/<%= post[x]._id %>"><%= post[x].title %> </a></h3>
+								</div>
+							</div>
+							<% } %>
+						<!-- /post widget -->
+
+						<!-- post widget -->
+						<div class="aside-widget">
+							<div class="section-title">
+								<h2>Featured Posts</h2>
+							</div>
+							<% for( let x = 9; x < post.length && x < 11; x++ ) { %>
+							
+							
+							<div class="post post-thumb">
+								<a class="post-img" href="blog-post.html"><img src="../images/post-2.jpg" alt=""></a>
+								<div class="post-body">
+									<div class="post-meta">
+										<a class="post-category cat-3" href="<%= post[x]._id %>"><%= post[x].tag %> </a>
+										<span class="post-date"><%= post[x].date %></span>
+									</div>
+									<h3 class="post-title"><a href="<%= post[x]._id %>"><%= post[x].title %></a></h3>
+								</div>
+							</div>
+							<% } %>
+						</div>
+						<!-- /post widget -->
+						
+						<!-- ad -->
+						<div class="aside-widget text-center">
+							<a href="#" style="display: inline-block;margin: auto;">
+								<img class="img-responsive" src="../images/ad-1.jpg" alt="">
+							</a>
+						</div>
+						<!-- /ad -->
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+		
+		<!-- section -->
+		<div class="section section-grey">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title text-center">
+							<h2>Featured Posts</h2>
+						</div>
+					</div>
+
+					<!-- post -->
+					<% for( let x = 11; x < post.length && x < 14 ; x++ ) { %>
+					<div class="col-md-4">
+						<div class="post">
+							<a class="post-img" href="/blog/<%=post[x]._id%>"><img src="../images/post-4.jpg" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-2" href="category.html"><%= post[x].tag %> </a>
+									<span class="post-date"><%= post[x].date %></span>
+								</div>
+								<h3 class="post-title"><a href="blog-post.html"><%= post[x].title %></a></h3>
+							</div>
+						</div>
+					</div>
+					<% } %>
+					<!-- /post -->
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+<% /* %> 
+		<!-- section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="section-title">
+									<h2>Most Read</h2>
+								</div>
+							</div>
+							<!-- post -->
+							<% for( let x = 15; x < post.length && x < 19 ; x++ ) { %>
+							
+							<% } %>
+							<div class="col-md-12">
+								<div class="post post-row">
+									<a class="post-img" href="/blog/post[x]._id"><img src="../images/post-4.jpg" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-2" href=""> </a>
+											<span class="post-date"> </span>
+										</div>
+										<h3 class="post-title"><a href="blog-post.html"><%=post[x].title%></a></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+									</div>
+								</div>
+							</div>
+							<!-- /post -->
+<% */ %>							
+							<div class="col-md-12">
+								<div class="section-row">
+									<button class="primary-button center-block">Load More</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<!-- ad -->
+						<div class="aside-widget text-center">
+							<a href="#" style="display: inline-block;margin: auto;">
+								<img class="img-responsive" src="../images/ad-1.jpg" alt="">
+							</a>
+						</div>
+						<!-- /ad -->
+						
+						<!-- catagories -->
+						<div class="aside-widget">
+							<div class="section-title">
+								<h2>Catagories</h2>
+							</div>
+							<div class="category-widget">
+								<ul>
+									<li><a href="#" class="cat-1">Other<span>340</span></a></li>
+									<li><a href="#" class="cat-2">JavaScript<span>74</span></a></li>
+									<li><a href="#" class="cat-4">JQuery<span>41</span></a></li>
+									<li><a href="#" class="cat-3">CSS<span>35</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /catagories -->
+						
+						<!-- tags -->
+						<div class="aside-widget">
+							<div class="tags-widget">
+								<ul>
+									<li><a href="#">Chrome</a></li>
+									<li><a href="#">CSS</a></li>
+									<li><a href="#">Tutorial</a></li>
+									<li><a href="#">Backend</a></li>
+									<li><a href="#">JQuery</a></li>
+									<li><a href="#">Design</a></li>
+									<li><a href="#">Development</a></li>
+									<li><a href="#">JavaScript</a></li>
+									<li><a href="#">Website</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /tags -->
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+
+		<!-- Footer -->
+		<footer id="footer">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-5">
+						<div class="footer-widget">
+							<div class="footer-logo">
+								<a href="index.html" class="logo"><img src="../images/logo.png" alt=""></a>
+							</div>
+							<ul class="footer-nav">
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Advertisement</a></li>
+							</ul>
+							<div class="footer-copyright">
+								<span>
+Copyright © 2019 All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i> <a  target="_blank">Webchurd</a></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="footer-widget">
+									<h3 class="footer-title">About Us</h3>
+									<ul class="footer-links">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="#">Join Us</a></li>
+										<li><a href="contact.html">Contacts</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="footer-widget">
+									<h3 class="footer-title">Catagories</h3>
+									<ul class="footer-links">
+										<li><a href="category.html">Web Design</a></li>
+										<li><a href="category.html">JavaScript</a></li>
+										<li><a href="category.html">Css</a></li>
+										<li><a href="category.html">Jquery</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="footer-widget">
+							<h3 class="footer-title">Join our Newsletter</h3>
+							<div class="footer-newsletter">
+								<form>
+									<input class="input" type="email" name="newsletter" placeholder="Enter your email">
+									<button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
+								</form>
+							</div>
+							<ul class="footer-social">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+</div>
+		</footer>
+		<!-- /Footer -->
+
+		<!-- jQuery Plugins -->
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/main2.js"></script>
+  </body>
+</html>

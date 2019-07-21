@@ -1,0 +1,35 @@
+nav {
+    height: 70px;
+}
+
+.container {
+    position: relative;
+    width: 970px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-brand {
+    line-height: 70px;
+    display: inline-block;
+}
+
+a.nav-link {
+    position: relative;
+    padding: 25px 20px;
+    text-transform: capitalize;
+    -webkit-box-shadow: -1px 0px 0px 0px #eceef2 inset;
+    box-shadow: -1px 0px 0px 0px #eceef2 inset;
+    -webkit-transition: 0.2s color;
+    transition: 0.2s color;
+}
+
+.spec {
+    padding: 25px 20px;
+}
+
+#navbarSupportedContent li{
+    border: 1px
+}
